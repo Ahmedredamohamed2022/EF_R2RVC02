@@ -42,6 +42,7 @@
 
 * The post-layout simulation results of the proposed EF_R2RVC02 are listed in Table 2. Those parameters are reported at Temp.=27°C, CL=1pF, SELA=1.8V, SELB=1.8V. 
 *Table 2. Electrical Characteristics*
+
 <img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/table2.png" width="800" height="500">
 
 ## 6. Typical Performance Curves
