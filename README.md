@@ -8,13 +8,15 @@
 
 ## 2. Features
 * Rail-Rail Voltage Comparator.
-* Dual Power Supply. 
+* Dual Channel.
+* Dual Power Supply.
 * No Hysteresis.
-* 11.5 ns Propagation Delay Input to Output. 
-* 380 μA Max Quiescent Current.
-* Input Voltage range 0V to 3.3V.
-* Output Voltage range 0 V to 1.8V.
-* 5mV input offset voltage.
+* 12 ns Propagation Delay Input to Output.
+* 371 μA Max Quiescent Current.
+* Input Voltage range 0V to 3.3 V.
+* Output Voltage range 0 V to 1.8 V.
+* 5 mV input offset voltage.
+
 
 ## 3. Applications
 * SAR-ADC.
@@ -23,12 +25,12 @@
 
 ## 4. Pin Configuration and Functions
 
-* Corresponding to the Block Diagram of the EF_R2RVC, each pin name with its function is described in Table 1. Moreover, a typical application of the EF_R2RVC configuration is presented in Figure 2, where, CL=1pF.
+* Corresponding to the Block Diagram of the EF_R2RVC02, each pin name with its function is described in Table 1. Moreover, a typical application of the EF_R2RVC02 configuration is presented in Figure 2, where, CL=1pF.
 
 *Table 1. Pin Configuration and Functions*
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/table1.png" width="800" height="200">
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/table1.png" width="800" height="200">
 
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig2.png"  width="450" height="250">
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig2.png"  width="450" height="250">
 
 *Figure 2. Typical Application*
 
