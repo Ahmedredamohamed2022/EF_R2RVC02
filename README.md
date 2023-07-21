@@ -52,89 +52,55 @@
 
 #### Next, typical performance curves of the EF_R2RVC02 post-layout simulations are presented. 
 
-* Temperature Sweep  
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig3_a.png" width="300" height="300">
-
-(a) 
-
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig3_b.png" width="300" height="300">
-
-(b)
-
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig3_c.png" width="300" height="300">
-
-(c)
-
-*Figure 3. Quiescent current  Vs Temperature (a) VINM=VINP=1.65V (b) VINM=1.65V, VINP=0V, and (C)  VINM=0V, VINP=1.65V.*
-
 * DC Sweep of VINP
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig4_a.png" width="300" height="250">
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig4a.png" width="300" height="250">
 
 (a) 
 
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig4_b.png" width="300" height="250">
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig4b.png" width="300" height="250">
 
 (b)
 
-*Figure 4. DC sweep simulation result, (a) input (VINP)  and output (Vo) voltages, (b) Quiescent current.*
+*Figure 4. DC sweep simulation result, (a) input (A1)  and output (Vo) voltages, (b) Quiescent current.*
 
 * DC Sweep of VINP and VINM
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig5_a.png" width="300" height="250">
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig5a.png" width="300" height="250">
 
 (a) 
 
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig5_b.png" width="300" height="250">
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig5b.png" width="300" height="250">
 
 (b)
 
-*Figure 5. DC sweep simulation result, (a) inputs of  VINP, VINM, and output (Vo) voltages, (b) Quiescent current.*
+*Figure 5. DC sweep simulation result, (a) inputs of  A1, B1, and output (Vo) voltages, (b) Quiescent current.*
 
-* Transient Ramp Signal
+* Transient Ramp and Sin Signals
 
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig6.png" width="300" height="250">
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig6a.png" width="300" height="250">
 
-*Figure 6. Ramp Input and output voltages of the comparator.* 
+(a)
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig6b.png" width="300" height="250">
+
+(b)
+
+*Figure 6. (a) Ramp, (b) Sin Input and output voltages of the comparator.* 
 
 * Transient Step Signal
 
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig7_a.png" width="300" height="250">
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig7.png" width="300" height="250">
 
 *Figure 7. Step Input and output voltages of the comparator.* 
 
 * Core Silicon area
 * 
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig8.png" width="300" height="250">
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig8.png" width="300" height="250">
 
 *Figure 8. Rail-rail voltage comparator.*
 
 * Supplementary Simulation Results
 
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig9.png" width="300" height="250">
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig9.png" width="300" height="250">
 
-*Figure 9. Frequency response of the internal OTA.*
-
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig10.png" width="300" height="250">
-
-*Figure 10. Total trans-conductance of the internal OTA.*
-
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig11_a.png" width="300" height="250">
-
-(a)
-
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig11_b.png" width="300" height="250">
-
-(b)
-
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig11_c.png" width="300" height="250">
-
-(c)
-
-*Figure 11. Step input signal vs output (a) tt_27c_3p3V_1p8V, (b) ff_0c_3p63V_1p98V, (c) ss_70c_2p96V_1p62V.*
-
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig12.png" width="800" height="150">
-
-
-*Figure 12. Summary of step input signal vs output.* 
 
 ## 7. Downloading the files on your System
 <p>&nbsp;</p>
