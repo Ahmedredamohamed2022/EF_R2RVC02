@@ -1,0 +1,75 @@
+** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/tb/r2rvc02/r2r_dcop.sch
+**.subckt r2r_dcop
+V1 VSS GND 0
+.save i(v1)
+V2 VDD VSS 3.3
+.save i(v2)
+C1 VOUT VSS 1p m=1
+V5 DVDD VSS 1.8
+.save i(v5)
+x1 a1 a2 b1 b2 VOUT sela selb DVDD VSS VSS VDD EF_R2RVC02mf
+
+V9 b1 VSS 0
+.save i(v9)
+V10 a1 VSS 0
+.save i(v10)
+
+V11 b2 VSS 1.65
+.save i(v11)
+V12 a2 VSS 1.65
+.save i(v12)
+V13 selb VSS 1.8
+.save i(v13)
+V14 sela VSS 1.8
+.save i(v14)
+**** begin user architecture code
+.lib /home/ahmedreda/PDK/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include EF_R2RVC02mf.spice
+
+
+
+.option wnflag=1
+.option TEMP=27
+.option TNOM=27
+
+.control
+op
+run
+set filetype=ascii
+**set filetype=binary
+
+save all
+print all
+let vddcom=3.3
+let vddbuf=1.8
+let icom=v2#branch
+let ibuf=v5#branch
+let itot=v5#branch+v2#branch
+
+let pow_com=abs(vddcom*icom)
+let pow_buf=abs(vddbuf*ibuf)
+let pow_tot=pow_com+pow_buf
+
+print mean(icom)
+print mean(ibuf)
+print mean(itot)
+print mean(abs(itot))
+
+print  pow_com pow_buf pow_tot
+
+
+
+.endc
+
+
+
+
+**.include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+**.include /ciic/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl__lsbuflv2hv_1.spice
+
+
+
+.GLOBAL GND
+.end
