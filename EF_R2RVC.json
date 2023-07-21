@@ -1,11 +1,11 @@
 {
-    "name" : "EF_R2RVC",
-    "repo": "https://github.com/Ahmedredamohamed2022/EF_R2RVC.git",
+    "name" : "EF_R2RVC02",
+    "repo": "https://github.com/Ahmedredamohamed2022/EF_R2RVC02.git",
     "author" : "Ahmed Reda",
     "email": "ahmed.reda@efabless.com",
     "version" : "0.1",
     // m-d-y
-    "date": "6-1-2023",
+    "date": "7-1-2023",
     // digital, analog, dataconv, comm, rf, mixed signal ...
     "category": " mixed signal",
     // hard/soft
@@ -13,6 +13,6 @@
     // np (not proven), fpga (proven), silicon (proven), 
     "status": "np",
     // width and height in mm
-    "width": "0.062",
-    "height": "0.052.5"
+    "width": "0.076",
+    "height": "0.096"
 }
