@@ -79,6 +79,7 @@
 <img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig6a.png" width="300" height="250">
 
 (a)
+
 <img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig6b.png" width="300" height="250">
 
 (b)
@@ -92,14 +93,11 @@
 *Figure 7. Step Input and output voltages of the comparator.* 
 
 * Core Silicon area
-* 
+  
 <img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig8.png" width="300" height="250">
 
 *Figure 8. Rail-rail voltage comparator.*
 
-* Supplementary Simulation Results
-
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig9.png" width="300" height="250">
 
 
 ## 7. Downloading the files on your System
