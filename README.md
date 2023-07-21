@@ -25,7 +25,7 @@
 
 ## 4. Pin Configuration and Functions
 
-* Corresponding to the Block Diagram of the EF_R2RVC02, each pin name with its function is described in Table 1. Moreover, a typical application of the EF_R2RVC02 configuration is presented in Figure 2, where, CL=1pF.
+* Corresponding to the Block Diagram of the EF_R2RVC02, each pin name with its function is described in Table 1. Moreover, a typical application of the EF_R2RVC02 configuration is presented in Figure 2 and its timing digram is illustrated in Figure 3.
 
 *Table 1. Pin Configuration and Functions*
 <img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/table1.png" width="800" height="200">
@@ -34,12 +34,15 @@
 
 *Figure 2. Typical Application*
 
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/fig3.png"  width="450" height="250">
+
+*Figure 3. Timing Diagram*
+
 ## 5. Electrical Characteristics
 
-* The post-layout simulation results of the proposed EF_R2RVC are listed in Table 2. Those parameters are reported at Temp.=27°C,CL=1pF. 
-
+* The post-layout simulation results of the proposed EF_R2RVC are listed in Table 2. Those parameters are reported at Temp.=27°C, CL=1pF, SELA=1.8V, SELB=1.8V. 
 *Table 2. Electrical Characteristics*
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/table2.png" width="800" height="550">
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/table2.png" width="800" height="500">
 
 ## 6. Typical Performance Curves
 
