@@ -25,7 +25,7 @@
 
 ## 4. Pin Configuration and Functions
 
-* Corresponding to the Block Diagram of the EF_R2RVC02, each pin name with its function is described in Table 1. Moreover, a typical application of the EF_R2RVC02 configuration is presented in Figure 2 and its timing digram is illustrated in Figure 3.
+* Corresponding to the Block Diagram of the EF_R2RVC02, each pin name with its function is described in Table 1. Moreover, a typical application of the EF_R2RVC02 configuration is presented in Figure 2 and its timing diagram is illustrated in Figure 3.
 
 *Table 1. Pin Configuration and Functions*
 <img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/table1.png" width="800" height="200">
@@ -40,16 +40,16 @@
 
 ## 5. Electrical Characteristics
 
-* The post-layout simulation results of the proposed EF_R2RVC are listed in Table 2. Those parameters are reported at Temp.=27°C, CL=1pF, SELA=1.8V, SELB=1.8V. 
+* The post-layout simulation results of the proposed EF_R2RVC02 are listed in Table 2. Those parameters are reported at Temp.=27°C, CL=1pF, SELA=1.8V, SELB=1.8V. 
 *Table 2. Electrical Characteristics*
-<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/table2.png" width="800" height="500">
+<img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC02/blob/main/docs/_static/table2.png" width="800" height="500">
 
 ## 6. Typical Performance Curves
 
-* The proposed EF_R2RVC has been designed and simulated using open-source tools with SkyWater technology. Herein, [XSCHEM](https://xschem.sourceforge.io/stefan/index.html) is a schematic capture program that provides a graphical method of the electronic schematic circuit, easily. [NGSPICE](http://ngspice.sourceforge.net/download.html) is an open-source spice simulator. It is exploited to simulate and verify the designed circuit. The layout of the EF_R2RVC is implemented using [MAGIC 8.3](http://opencircuitdesign.com/magic/) and for design rule check (DRC) as well. However, [NETGEN](http://opencircuitdesign.com/netgen/) is used for comparing netlists of the layout and schematic, known as layout vs schematic (LVS). [PYTHON](https://www.python.org/) can be integrated with the NGSPICE simulator for data manipulation/analysis of the simulation result.
+* The proposed EF_R2RVC02 has been designed and simulated using open-source tools with SkyWater technology. Herein, [XSCHEM](https://xschem.sourceforge.io/stefan/index.html) is a schematic capture program that provides a graphical method of the electronic schematic circuit, easily. [NGSPICE](http://ngspice.sourceforge.net/download.html) is an open-source spice simulator. It is exploited to simulate and verify the designed circuit. The layout of the EF_R2RVC02 is implemented using [MAGIC 8.3](http://opencircuitdesign.com/magic/) and for design rule check (DRC) as well. However, [NETGEN](http://opencircuitdesign.com/netgen/) is used for comparing netlists of the layout and schematic, known as layout vs schematic (LVS). [PYTHON](https://www.python.org/) can be integrated with the NGSPICE simulator for data manipulation/analysis of the simulation result.
 
 
-#### Next, typical performance curves of the EF_R2RVC post-layout simulations are presented. 
+#### Next, typical performance curves of the EF_R2RVC02 post-layout simulations are presented. 
 
 * Temperature Sweep  
 <img src="https://github.com/Ahmedredamohamed2022/EF_R2RVC/blob/main/docs/_static/fig3_a.png" width="300" height="300">
@@ -141,6 +141,6 @@
 * The files from this repository can be downloaded and used by the following commands:-
 >`sudo apt install -y git`
 
->`git clone https://github.com/Ahmedredamohamed2022/EF_R2RVC.git`
+>`git clone https://github.com/Ahmedredamohamed2022/EF_R2RVC02.git`
 
 <p>&nbsp;</p>
