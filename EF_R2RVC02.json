@@ -1,18 +1,28 @@
 {
-    "name" : "EF_R2RVC02",
-    "repo": "https://github.com/Ahmedredamohamed2022/EF_R2RVC02.git",
-    "author" : "Ahmed Reda",
-    "email": "ahmed.reda@efabless.com",
-    "version" : "0.1",
-    // m-d-y
-    "date": "7-1-2023",
-    // digital, analog, dataconv, comm, rf, mixed signal ...
-    "category": " mixed signal",
-    // hard/soft
-    "type": "hard",
-    // np (not proven), fpga (proven), silicon (proven), 
-    "status": "np",
-    // width and height in mm
-    "width": "0.076",
-    "height": "0.096"
+    "info": {
+        "name": "EF_R2RVC02",
+        "description": "?????",
+        "repo": "github.com/efabless/EF_R2RVC02",
+        "owner": "efabless",
+        "license": "??",
+        "author": "Ahmed Reda",
+        "email": "ahmed.reda@efabless.com",
+        "version": "v1.0.0",
+        "date": "5-1-2023",
+        "category": "3",
+        "tags": [
+            "??"
+        ],
+        "bus": [
+            "??"
+        ],
+        "type": "hard",
+        "status": "verified",
+        "cell_count": "??",
+        "width": "0.076",
+        "height": "0.096",
+        "technology": "sky130",
+        "clock_freq_mhz": "??",
+        "supply_voltage": "??"
+    }
 }
