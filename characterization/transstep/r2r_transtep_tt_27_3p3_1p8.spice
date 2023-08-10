@@ -1,0 +1,98 @@
+** sch_path:
+*+ /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/tb/r2rvc02/r2r_transtep_tt_27_3p3_1p8.sch
+**.subckt r2r_transtep_tt_27_3p3_1p8
+V1 VSS GND 0
+.save i(v1)
+V2 VDD VSS 3.3
+.save i(v2)
+C1 VOUT VSS 1p m=1
+V5 DVDD VSS 1.8
+.save i(v5)
+V3 b1 VSS pulse(0 3.3 0 0.01us 0.01us 3us 5us)
+.save i(v3)
+V4 a1 VSS 1.65
+.save i(v4)
+x1 a1 a2 b1 b2 VOUT sela selb DVDD VSS VSS VDD EF_R2RVC02mf
+V6 b2 VSS 1.65
+.save i(v6)
+V7 a2 VSS 1.65
+.save i(v7)
+V8 selb VSS 1.8
+.save i(v8)
+V9 sela VSS 1.8
+.save i(v9)
+**** begin user architecture code
+
+
+.option wnflag=1
+.option TEMP=27
+.option TNOM=27
+.option wnflag=1
+.control
+**set filetype=binary
+set filetype=ascii
+set color0=white
+set color1=black
+set color3=blue
+set xbrushwidth=3
+save all
+run
+tran 10n 20e-6 0.1u
+*let voutanalog=x3.x1.voutanalog
+let vddbuf=1.8
+let valout10=0.1*vddbuf
+let valout90=0.9*vddbuf
+let valout50=0.5*vddbuf
+let per=10e-6
+
+let vddcom=3.3
+let valin50=0.5*vddcom
+
+meas tran trise trig v(Vout) val={$&valout10} rise=1 targ v(Vout) val={$&valout90} rise=1
+meas tran tfall trig v(Vout) val={$&valout90} fall=1 targ v(Vout) val={$&valout10} fall=1
+
+meas tran tpdr trig v(b1) val={$&valin50} rise=1 targ v(Vout) val={$&valout50} rise=1
+meas tran tpdf trig v(b1) val={$&valin50} fall=1 targ v(Vout) val={$&valout50} fall=1
+
+meas tran icom_ave AVG v2#branch from=0u to=$&per
+meas tran ibuf_ave AVG v5#branch from=0u to=$&per
+
+print trise tfall  tpdr tpdf abs(icom_ave) abs(ibuf_ave)
+
+*plot vinp vinp v(vout) v(voutanalog)
+plot a1 b1 v(vout)
+
+*write /ciic/designs/analog-mixed-signal-blocks/Xschem-schematic/comparator_top/xschem/transtep.raw
+*+ {trise} {tfall} {tpdr} {tpdf} {icom_ave} {ibuf_ave} {v(v1)} {v(vout)}
+meas tran trise trig v(Vout) val={$&valout10} rise=1 targ v(Vout) val={$&valout90} rise=1
+meas tran tfall trig v(Vout) val={$&valout90} fall=1 targ v(Vout) val={$&valout10} fall=1
+
+meas tran tpdr trig v(b1) val={$&valin50} fall=1 targ v(Vout) val={$&valout50} rise=1
+meas tran tpdf trig v(b1) val={$&valin50} rise=1 targ v(Vout) val={$&valout50} fall=1
+meas tran icom_ave AVG v2#branch from=0u to=$&per
+meas tran ibuf_ave AVG v5#branch from=0u to=$&per
+
+print trise tfall  tpdr tpdf abs(icom_ave) abs(ibuf_ave)
+
+.endc
+
+
+.lib /home/ahmedreda/PDK/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include EF_R2RVC02mf.spice
+
+
+**.include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+**.include /ciic/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl__lsbuflv2hv_1.spice
+
+
+
+
+
+
+
+
+
+.GLOBAL GND
+.end
