@@ -106,6 +106,6 @@
 * The files from this repository can be downloaded and used by the following commands:-
 >`sudo apt install -y git`
 
->`git clone https://github.com/Ahmedredamohamed2022/EF_R2RVC02.git`
+>`git clone https://github.com/efabless/EF_R2RVC02.git`
 
 <p>&nbsp;</p>
