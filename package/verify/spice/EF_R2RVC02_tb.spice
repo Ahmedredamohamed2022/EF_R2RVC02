@@ -1,0 +1,78 @@
+** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/tb/r2rvc02/EF_R2RVC02_tb.sch
+**.subckt EF_R2RVC02_tb
+V1 VSS GND 0
+.save i(v1)
+V2 VDD VSS 3.3
+.save i(v2)
+C1 VO VSS 1p m=1
+V5 DVDD VSS 1.8
+.save i(v5)
+V3 B1 VSS pulse(0 3.3 0 4.95us 4.95us 0.1us 10us)
+.save i(v3)
+V4 A1 VSS 1
+.save i(v4)
+V6 B2 VSS pulse(0 2.5 0 4.95us 4.95us 0.1us 10us)
+.save i(v6)
+V7 A2 VSS 2
+.save i(v7)
+V8 SELB VSS 0
+.save i(v8)
+V9 SELA VSS 0
+.save i(v9)
+
+x2 DVDD VSS SELA SELB VDD DVSS A1 A2 B1 B2 VO EF_R2RVC02
+
+
+
+V10 DVSS GND 0
+.save i(v10)
+**** begin user architecture code
+
+
+.option wnflag=1
+.option TEMP=27
+.option TNOM=27
+.option wnflag=1
+.control
+**set filetype=binary
+set filetype=ascii
+set color0=white
+set color1=black
+set color3=blue
+set xbrushwidth=3
+save all
+run
+tran 10n 20e-6 0.1u
+*let voutanalog=x3.x1.voutanalog
+let vddbuf=1.8
+let valout10=0.1*vddbuf
+let valout90=0.9*vddbuf
+let valout50=0.5*vddbuf
+let per=10e-6
+
+let vddcom=3.3
+let valin50=0.5*vddcom
+
+
+
+
+plot A1 B1 VO
+plot A2 B2 Vo
+
+
+.endc
+
+
+.lib /home/ahmedreda/PDK/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+
+**.include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+**.include /ciic/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl__lsbuflv2hv_1.spice
+.include EF_R2RVC02.spice
+
+
+
+.GLOBAL GND
+.end
