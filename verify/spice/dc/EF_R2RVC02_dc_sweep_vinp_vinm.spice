@@ -1,0 +1,87 @@
+** sch_path:
+*+ /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/tb/r2rvc02/r2r_dcsweepvinpvinm.sch
+**.subckt r2r_dcsweepvinpvinm
+V1 VSS GND 0
+.save i(v1)
+V2 VDD VSS 3.3
+.save i(v2)
+C1 VO VSS 1p m=1
+V5 DVDD VSS 1.8
+.save i(v5)
+V3 B1 VSS 0
+.save i(v3)
+V4 A1 VSS 1
+.save i(v4)
+V10 B2 VSS 1.65
+.save i(v10)
+V11 A2 VSS 1.65
+.save i(v11)
+*x1 A1 A2 B1 B2 VO SELA SELB DVDD VSS VSS VDD EF_R2RVC02mf
+
+x1 VSS VO SELB A2 B2 B1 SELA DVSS A1 DVDD VDD EF_R2RVC02
+
+V13 DVSS GND 0
+.save i(v13)
+V8 SELB VSS 1.8
+.save i(v8)
+V9 SELA VSS 1.8
+.save i(v9)
+**** begin user architecture code
+.lib /home/ahmedreda/PDK/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include EF_R2RVC02.spice
+
+
+.option wnflag=1
+.option TEMP=27
+.option TNOM=27
+.option wnflag=1
+.control
+**set filetype=binary
+set filetype=ascii
+set color0=white
+set color1=black
+set color3=blue
+set xbrushwidth=3
+save all
+*save all @m.x3.x1.xm1.msky130_fd_pr__nfet_g5v0d10v5[gm]
+*save all @m.x3.x1.xm2.msky130_fd_pr__nfet_g5v0d10v5[gm]
+*save all @m.x3.x1.xm10.msky130_fd_pr__pfet_g5v0d10v5[gm]
+*save all @m.x3.x1.xm11.msky130_fd_pr__pfet_g5v0d10v5[gm]
+*save all @x3.x1.voutanalog
+run
+OP
+dc V3 0 3.3 0.05 V4 0 3.3 0.05
+*let gmn = @m.x3.x1.xm1.msky130_fd_pr__nfet_g5v0d10v5[gm]
+*let gmp = @m.x3.x1.xm10.msky130_fd_pr__pfet_g5v0d10v5[gm]
+*let gmtot = gmn+gmp
+let icom=abs(v2#branch)
+let ibuf=abs(v5#branch)
+let itot=icom+ibuf
+*let voutanalog=x3.x1.voutanalog
+let voutdigital=vout
+*plot gmn gmp  gmtot
+plot ibuf icom  itot
+plot  itot
+plot ibuf
+
+*plot v1 v2    voutanalog voutdigital
+plot v1 v2 voutdigital
+plot A1 B1 vout
+
+write  /ciic/designs/analog-mixed-signal-blocks/Xschem-schematic/comparator_top/xschem/dcsweepr2r.raw
++   {gmn} {gmp} {gmtot} {icom} {ibuf} {itot}
+.endc
+
+
+
+
+**.include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+**.include /ciic/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl__lsbuflv2hv_1.spice
+
+
+
+
+.GLOBAL GND
+.end
