@@ -1,3 +1,35 @@
+# Overview
+This repo contains a Rail-Rail Dual Channel Voltage Comparator, Dual Power Supply titled "EF_R2RVC02"
+
+# Prerequisites
+
+*	OS tested: [Linux Ubuntu 64-bit 22.04.1-desktop-amd64](https://ubuntu.com/download/desktop)
+*	[XSCHEM V3.1.0](https://xschem.sourceforge.io/stefan/index.html) is a schematic capture program that provides a graphical method of the electronic schematic circuit, easily.
+*	[NGSPICE-36](http://ngspice.sourceforge.net/download.html) is an open-source spice simulator. It is exploited to simulate and verify the designed circuit.
+*	[MAGIC 8.3.427](http://opencircuitdesign.com/magic/) is for layout implementation and DRC checks as well.
+*	[NETGEN 1.5.245](http://opencircuitdesign.com/netgen/) is used for comparing netlists of the layout and schematic, known as layout vs. schematic (LVS).
+*	[PYTHON 3.10.12](https://www.python.org/) can be integrated with the NGSPICE simulator for data manipulation/analysis of the simulation result.
+
+# Quickstart
+1) Downloading the files on your system
+      - The files from this repository can be downloaded and used by the following commands:-
+
+<p>&nbsp;</p>
+
+>`sudo apt install -y git`
+
+>`git clone https://github.com/efabless/EF_R2RVC02.git`
+
+2) Run a simulation on your machine
+      - Open verify/spice. There are test benches for the circuit such as dc and tran. Each folder contains spice files to test/simulate the circuit.
+      - To run the spice file, you can use the next command after opening a terminal.    
+<p>&nbsp;</p>
+
+>`ngspice <spice_name> <./EF_R2RVC02.spice>`
+
+<p>&nbsp;</p>
+
+
 # 1. Description
 
 * The EF_R2RVC02 is a dual channel rail-to-rail voltage comparator with a built-in reference circuit. Its input consists of an n-differential pair connected with a p-differential pair in parallel. While a class B, which is a CMOS inverter, is utilized for the comparator’s output stage. The comparator operates with dual power supplies of 3.3V and 1.8V. It provides a propagation delay of 12 nA and a maximum quiescent current of 371 μA.
