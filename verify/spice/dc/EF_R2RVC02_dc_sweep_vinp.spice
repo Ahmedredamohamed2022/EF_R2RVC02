@@ -30,13 +30,12 @@ V7 A2 VSS 1.65
 .save i(v7)
 **** begin user architecture code
 
-
-.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl__lsbuflv2hv_1.spice
-
-
 .lib $PDK_ROOT/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .include ../../spice/$SIM/EF_R2RVC02.spice
+.include $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl__lsbuflv2hv_1.spice
+.include $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+
 
 
 

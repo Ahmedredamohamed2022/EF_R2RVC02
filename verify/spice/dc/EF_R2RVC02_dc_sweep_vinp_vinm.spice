@@ -14,7 +14,6 @@ V10 B2 VSS 1.65
 .save i(v10)
 V11 A2 VSS 1.65
 .save i(v11)
-*x1 A1 A2 B1 B2 VO SELA SELB DVDD VSS VSS VDD EF_R2RVC02mf
 
 x1 VSS VO SELB A2 B2 B1 SELA DVSS A1 DVDD VDD EF_R2RVC02
 
@@ -25,9 +24,6 @@ V8 SELB VSS 1.8
 V9 SELA VSS 1.8
 .save i(v9)
 **** begin user architecture code
-
-.lib $PDK_ROOT/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.include ../../spice/$SIM/EF_R2RVC02.spice
 
 
 
@@ -74,11 +70,11 @@ write  /ciic/designs/analog-mixed-signal-blocks/Xschem-schematic/comparator_top/
 
 
 
-
-**.include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-**.include /ciic/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl__lsbuflv2hv_1.spice
+.lib $PDK_ROOT/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include ../../spice/$SIM/EF_R2RVC02.spice
+.include $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl__lsbuflv2hv_1.spice
+.include $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
 
 
 

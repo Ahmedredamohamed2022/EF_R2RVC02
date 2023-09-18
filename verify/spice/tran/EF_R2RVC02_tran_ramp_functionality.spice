@@ -12,8 +12,6 @@ V3 B1 VSS pulse(0 3.3 0 4.95us 4.95us 0.1us 10us)
 .save i(v3)
 V4 A1 VSS 1
 .save i(v4)
-*x1 VO VDD B1 A1 VSS B2 A2 DVDD VSS SELA SELB EF_R2RVC02X
-*x1 A1 A2 B1 B2 VO SELA SELB DVDD VSS VSS VDD EF_R2RVC02mf
 
 x2 VSS VO SELB A2 B2 B1 SELA DVSS A1 DVDD VDD EF_R2RVC02
 
@@ -51,15 +49,11 @@ plot A2 B2 VO
 
 .endc
 
-
 .lib $PDK_ROOT/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .include ../../spice/$SIM/EF_R2RVC02.spice
-
-
-**.include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-**.include /ciic/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl__lsbuflv2hv_1.spice
+.include $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl__lsbuflv2hv_1.spice
+.include $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
 
 
 
