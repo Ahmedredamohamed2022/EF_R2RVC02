@@ -11,23 +11,48 @@ This repo contains a Rail-Rail Dual Channel Voltage Comparator, Dual Power Suppl
 *	[PYTHON 3.10.12](https://www.python.org/) can be integrated with the NGSPICE simulator for data manipulation/analysis of the simulation result.
 
 # Quickstart
-1) Downloading the files on your system
-      - The files from this repository can be downloaded and used by the following commands:-
 
-<p>&nbsp;</p>
+1. Clone repo or download via IPM
 
->`sudo apt install -y git`
+      * To clone repo
 
->`git clone https://github.com/efabless/EF_R2RVC02.git`
+      ```
+      git clone https://github.com/efabless/EF_R2RVC02.git
+      ```
 
-2) Run a simulation on your machine
-      - Open verify/spice. There are test benches for the circuit such as dc and tran. Each folder contains spice files to test/simulate the circuit.
-      - To run the spice file, you can use the next command after opening a terminal.    
-<p>&nbsp;</p>
+      * To download via [IPM](https://github.com/efabless/IPM/blob/main/README.md)
 
->`ngspice <spice_name> <./EF_R2RVC02.spice>`
+      ```
+      ipm install EF_R2RVC02
+      ```
 
-<p>&nbsp;</p>
+2. Set environment variables
+
+      You need to already have the PDK, you can use [volare](https://github.com/efabless/volare) to download the pdk
+      ```
+      export PDK_ROOT=<path to pdk>
+      ```
+
+3. Run simulation
+
+      To run simulation go to `./verify/spice`, and run these commands
+      ```
+      make verify-<test_bench>-<SIM>
+      ```
+      The `test_bench` is the name of the test bench for example `EF_R2RVC02_dc_sweep_vinp`, the `SIM` is either `layout` or `schematic`
+      
+      For example:
+      ```
+      make verify-EF_R2RVC02_dc_sweep_vinp-layout
+      ```
+
+      You can find all test benches that can be ran using this command
+      ```
+      make list
+      ```
+
+      **NOTE: ngspice DOES NOT handle environment variables used in the test benches. the Makefile handles that for you, if you wish to use your own command make sure you manually update the spice files**
+
 
 
 # 1. Description
