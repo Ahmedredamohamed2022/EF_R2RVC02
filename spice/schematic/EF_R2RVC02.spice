@@ -1,14 +1,4 @@
-.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl__lsbuflv2hv_1.spice
-.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
-.include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/schematic/EF_R2RVC02.sch
 .subckt EF_R2RVC02 VSS VO SELB A2 B2 B1 SELA DVSS A1 DVDD VDD
-
-
-
-
 *.PININFO DVDD:I VSS:I SELA:I SELB:I VDD:I DVSS:I A1:I A2:I B1:I B2:I VO:I
 x1 VO DVDD DVSS VDD VSS vinp vinm EF_R2RVCX
 x2 VDD DVDD vinp DVSS A1 A2 SELA EF_AMUX21x
@@ -16,8 +6,6 @@ x3 VDD DVDD vinm DVSS B1 B2 SELB EF_AMUX21x
 .ends
 
 * expanding   symbol:  Project/AR_SAR_ADC/comparator_top_02ch/schematic/EF_R2RVCX.sym # of pins=7
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/schematic/EF_R2RVCX.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/schematic/EF_R2RVCX.sch
 .subckt EF_R2RVCX VOUT DVDD DVSS VDD VSS VINP VINM
 *.PININFO VDD:I VOUT:O VSS:I VINP:I VINM:I DVDD:I DVSS:I
 x1 VDD net1 net2 VSS VINP net3 VINM comparator
@@ -27,8 +15,6 @@ x3 net3 DVDD DVSS DVSS VDD VDD VOUT sky130_fd_sc_hvl__lsbufhv2lv_1
 
 
 * expanding   symbol:  Project/AR_SAR_ADC/comparator_top_02ch/schematic/EF_AMUX21x.sym # of pins=7
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/schematic/EF_AMUX21x.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/schematic/EF_AMUX21x.sch
 .subckt EF_AMUX21x vdd3p3 vdd1p8 vo vss a b sel
 *.PININFO vdd1p8:I vss:I a:I b:I vdd3p3:I sel:I vo:I
 x2 vdd3p3 vdd1p8 vss sel vo a tg_lsx
@@ -38,8 +24,6 @@ x11 sel vss vss vdd1p8 vdd1p8 selp sky130_fd_sc_hvl__inv_2
 
 
 * expanding   symbol:  comparator.sym # of pins=7
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/schematic/comparator.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/schematic/comparator.sch
 .subckt comparator VDD VBP VBN VSS VINP VOUT VINM
 *.PININFO VINP:I VINM:I VBN:I VBP:I VDD:B VSS:B VOUT:O
 XM1 net3 VINM net1 VSS sky130_fd_pr__nfet_g5v0d10v5 L=2 W=5 nf=1 m=4
@@ -72,8 +56,6 @@ XM26 VDD VDD VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=2 W=5 nf=1 m=8
 
 
 * expanding   symbol:  comparator_bias.sym # of pins=4
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/schematic/comparator_bias.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/schematic/comparator_bias.sch
 .subckt comparator_bias VDD VSS VBP VBN
 *.PININFO VBP:O VBN:O VDD:B VSS:B
 XR1 net2 VDD VSS sky130_fd_pr__res_high_po W=1.41 L=141 mult=1 m=1
@@ -91,8 +73,6 @@ XM10 VBP VSS VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=2 W=5 nf=1 m=1
 
 
 * expanding   symbol:  Project/AR_SAR_ADC/comparator_top_02ch/schematic/tg_lsx.sym # of pins=6
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/schematic/tg_lsx.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/schematic/tg_lsx.sch
 .subckt tg_lsx vdd3p3 vdd1p8 vss l0 vo in0
 *.PININFO vdd1p8:I vdd3p3:I vss:I l0:I vo:O in0:I
 x9 s0 vss vo in0 vdd3p3 tg4dx
@@ -101,8 +81,6 @@ x1 vdd3p3 vdd1p8 vss s0 l0 array_1lsx
 
 
 * expanding   symbol:  Project/AR_SAR_ADC/analog_mux/schematic/tg4dx.sym # of pins=5
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/analog_mux/schematic/tg4dx.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/analog_mux/schematic/tg4dx.sch
 .subckt tg4dx hold vss out in vdd
 *.PININFO in:I out:O vss:I vdd:I hold:I
 XM1 in holdb out vss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=4 nf=2 m=1
@@ -120,8 +98,6 @@ XD1 vss hold sky130_fd_pr__diode_pw2nd_05v5 area=1 pj=4e6
 
 
 * expanding   symbol:  Project/AR_SAR_ADC/analog_mux/schematic/array_1lsx.sym # of pins=5
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/analog_mux/schematic/array_1lsx.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/analog_mux/schematic/array_1lsx.sch
 .subckt array_1lsx vdd3p3 vdd1p8 vss1p8 h0 l0
 *.PININFO vdd1p8:I vdd3p3:I vss1p8:I l0:I h0:O
 x5 l0 vdd1p8 vss1p8 vss1p8 vdd3p3 vdd3p3 net1 sky130_fd_sc_hvl__lsbuflv2hv_1
