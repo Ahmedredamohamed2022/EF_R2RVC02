@@ -129,15 +129,3 @@ This repo contains a Rail-Rail Dual Channel Voltage Comparator, Dual Power Suppl
 <img src="./doc/_static/fig8.png" width="300" height="250">
 
 *Figure 8. Rail-rail voltage comparator.*
-
-
-
-## 7. Downloading the files on your System
-<p>&nbsp;</p>
-
-* The files from this repository can be downloaded and used by the following commands:-
->`sudo apt install -y git`
-
->`git clone https://github.com/efabless/EF_R2RVC02.git`
-
-<p>&nbsp;</p>
