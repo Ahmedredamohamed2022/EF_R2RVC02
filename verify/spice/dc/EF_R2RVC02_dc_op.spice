@@ -1,5 +1,4 @@
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/tb/r2rvc02/r2r_dcop.sch
-**.subckt r2r_dcop
+** NOTE: ngspice DOES NOT handle environment variables used in the test benches. the Makefile handles that for you, if you wish to use your own command make sure you manually update the spice files
 V1 VSS GND 0
 .save i(v1)
 V2 VDD VSS 3.3
@@ -7,7 +6,6 @@ V2 VDD VSS 3.3
 C1 VO VSS 1p m=1
 V5 DVDD VSS 1.8
 .save i(v5)
-*x1 a1 A2 B1 b2 VO SELA SELB DVDD VSS VSS VDD EF_R2RVC02mf
 
 
 x2 VSS VO SELB A2 B2 B1 SELA DVSS A1 DVDD VDD EF_R2RVC02
@@ -29,8 +27,10 @@ V13 SELB VSS 1.8
 V14 SELA VSS 1.8
 .save i(v14)
 **** begin user architecture code
-.lib /home/ahmedreda/PDK/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.include EF_R2RVC02.spice
+
+.lib $PDK_ROOT/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include ../../spice/$SIM/EF_R2RVC02.spice
+
 
 
 

@@ -1,5 +1,5 @@
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch/tb/r2rvc02/r2r_dcsweepvinp.sch
-**.subckt r2r_dcsweepvinp
+** NOTE: ngspice DOES NOT handle environment variables used in the test benches. the Makefile handles that for you, if you wish to use your own command make sure you manually update the spice files
+
 V1 VSS GND 0
 .save i(v1)
 V2 VDD VSS 3.3
@@ -8,7 +8,6 @@ C1 VOUT VSS 1p m=1
 V5 DVDD VSS 1.8
 .save i(v5)
 
-*x2 DVDD VSS SELA SELB VDD DVSS A1 A2 B1 B2 VO EF_R2RVC02
 
 
 x1 VSS VO SELB A2 B2 B1 SELA DVSS A1 DVDD VDD EF_R2RVC02
@@ -32,14 +31,13 @@ V7 A2 VSS 1.65
 **** begin user architecture code
 
 
-**.include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
-**.include /ciic/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
 .include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
 .include /home/ahmedreda/PDK/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl__lsbuflv2hv_1.spice
 
 
-.lib /home/ahmedreda/PDK/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.include EF_R2RVC02.spice
+.lib $PDK_ROOT/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include ../../spice/$SIM/EF_R2RVC02.spice
+
 
 
 .option wnflag=1
