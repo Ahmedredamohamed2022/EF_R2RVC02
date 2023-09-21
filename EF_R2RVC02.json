@@ -4,25 +4,25 @@
         "description": " Rail-Rail Dual Channel Voltage Comparator, Dual Power Supply.",
         "repo": "github.com/efabless/EF_R2RVC02",
         "owner": "efabless",
-        "license": "??",
+        "license": "Apache 2.0",
         "author": "Ahmed Reda",
         "email": "ahmed.reda@efabless.com",
         "version": "v1.0.0",
         "date": "5-1-2023",
         "category": "mixed",
         "tags": [
-            "??"
+            "Analog comparator"
         ],
         "bus": [
-            "??"
+            "n/a"
         ],
         "type": "hard",
         "status": "verified",
-        "cell_count": "??",
+        "cell_count": "n/a",
         "width": "0.079",
         "height": "0.0995",
         "technology": "sky130",
         "clock_freq_mhz": "n/a",
-        "supply_voltage": "3.3V , 1.8V"
+        "supply_voltage": ["3.3V , 1.8V"]
     }
 }
