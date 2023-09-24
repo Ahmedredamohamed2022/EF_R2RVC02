@@ -1,6 +1,7 @@
 # Overview
 This repo contains a Rail-Rail Dual Channel Voltage Comparator, Dual Power Supply titled "EF_R2RVC02"
 
+This IP has a [digital wrapper](https://github.com/efabless/EF_ACMP_DI) provided.
 # Prerequisites
 
 *	OS tested: [Linux Ubuntu 64-bit 22.04.1-desktop-amd64](https://ubuntu.com/download/desktop)
