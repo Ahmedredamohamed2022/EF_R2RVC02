@@ -13,7 +13,9 @@ V3 B1 VSS pulse(0 3.3 0 4.95us 4.95us 0.1us 10us)
 V4 A1 VSS 1
 .save i(v4)
 
-x2 VSS VO SELB A2 B2 B1 SELA DVSS A1 DVDD VDD EF_R2RVC02
+x2 VSS A1 A2 SELB VO B2 B1 SELA VDD DVSS DVDD EN EF_R2RVC02
+
+
 
 V16 DVSS GND 0
 .save i(v16)
@@ -26,12 +28,15 @@ V8 SELB VSS 0
 .save i(v8)
 V9 SELA VSS 0
 .save i(v9)
+
+V99 EN VSS 1.8
+.save i(v99)
 **** begin user architecture code
 
 
 .option wnflag=1
-.option TEMP=27
-.option TNOM=27
+.option TEMP=25
+.option TNOM=25
 .option wnflag=1
 .control
 **set filetype=binary
