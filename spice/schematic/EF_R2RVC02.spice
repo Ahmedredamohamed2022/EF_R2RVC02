@@ -1,13 +1,13 @@
-.subckt EF_R2RVC02 VSS A1 A2 SELB VO B2 B1 SELA VDD DVSS DVDD EN
+
+
+.subckt EF_R2RVC02 DVDD VSS SELA SELB VDD DVSS A1 A2 B1 B2 VO EN
 *.PININFO DVDD:I VSS:I SELA:I SELB:I VDD:I DVSS:I A1:I A2:I B1:I B2:I VO:I EN:I
 x1 VO EN DVDD VDD vinp VSS DVSS vinm EF_R2RVCE1x
 x4 VDD DVDD DVSS vinp A1 A2 SELA EF_AMUX2to1ISOp
 x5 VDD DVDD DVSS vinm B1 B2 SELB EF_AMUX2to1ISOp
 .ends
 
-* expanding   symbol:  Project/AR_SAR_ADC/comparator_top_up/spice/xschem/EF_R2RVCE1x.sym # of pins=8
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_up/spice/xschem/EF_R2RVCE1x.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_up/spice/xschem/EF_R2RVCE1x.sch
+
 .subckt EF_R2RVCE1x VOUT EN DVDD VDD VINP VSS DVSS VINM
 *.PININFO VOUT:O VINP:I VINM:I VDD:B VSS:B DVSS:B DVDD:B EN:I
 x4 net1 DVDD DVSS DVSS VDD VDD VOUT sky130_fd_sc_hvl__lsbufhv2lv_1
@@ -20,12 +20,6 @@ x11 net2 DVSS DVSS VDD VDD ENB_C sky130_fd_sc_hvl__inv_4
 .ends
 
 
-* expanding   symbol:  Project/AR_SAR_ADC/comparator_top_02ch _up/spice/xschem/EF_AMUX2to1ISOp.sym #
-*+ of pins=7
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch
-*+ _up/spice/xschem/EF_AMUX2to1ISOp.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch
-*+ _up/spice/xschem/EF_AMUX2to1ISOp.sch
 .subckt EF_AMUX2to1ISOp VDD DVDD DVSS VO VIN1 VIN2 SEL
 *.PININFO DVDD:I VDD:I DVSS:I SEL:I VO:I VIN1:I VIN2:I
 x1 VO VDD DVDD DVSS SEL VIN1 single_ls_2tg_sw
@@ -34,12 +28,9 @@ x11 SEL DVSS DVSS DVDD DVDD SELB sky130_fd_sc_hvl__inv_4
 .ends
 
 
-* expanding   symbol:  Project/AR_SAR_ADC/comparator_top_up/spice/xschem/BIASE.sym # of pins=6
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_up/spice/xschem/BIASE.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_up/spice/xschem/BIASE.sch
+
 .subckt BIASE VDD VSS up down VBP VBN
 *.PININFO VBP:O VBN:O VDD:B VSS:B up:B down:B
-XR1 up VDD VSS sky130_fd_pr__res_high_po W=1.41 L=141 mult=1 m=1
 XM3 net1 down VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=2 W=20 nf=1 m=1
 XM4 VBN net1 down VDD sky130_fd_pr__pfet_g5v0d10v5 L=2 W=20 nf=1 m=1
 XM5 VBN VBN down VDD sky130_fd_pr__pfet_g5v0d10v5 L=15 W=1 nf=1 m=1
@@ -50,12 +41,11 @@ XM6 VBP VBN VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=2 W=5 nf=1 m=1
 XM8 VBN VSS VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=2 W=5 nf=1 m=1
 XM9 net1 VSS VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=2 W=5 nf=1 m=1
 XM10 VBP VSS VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=2 W=5 nf=1 m=1
+XR1 up VDD VDD sky130_fd_pr__res_high_po_1p41 L=141 mult=1 m=1
 .ends
 
 
-* expanding   symbol:  Project/AR_SAR_ADC/comparator_top_up/spice/xschem/COMPARATOR.sym # of pins=8
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_up/spice/xschem/COMPARATOR.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_up/spice/xschem/COMPARATOR.sch
+
 .subckt COMPARATOR VDD VBP VBN VSS VINP VOUT VINM VOUTANALOG
 *.PININFO VINP:I VINM:I VBN:I VBP:I VDD:B VSS:B VOUT:O VOUTANALOG:O
 XM1 net3 VINM net1 VSS sky130_fd_pr__nfet_g5v0d10v5 L=2 W=5 nf=1 m=4
@@ -87,12 +77,7 @@ XM26 VDD VDD VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=2 W=5 nf=1 m=8
 .ends
 
 
-* expanding   symbol:  Project/AR_SAR_ADC/comparator_top_02ch _up/spice/xschem/single_ls_2tg_sw.sym
-*+ # of pins=6
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch
-*+ _up/spice/xschem/single_ls_2tg_sw.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/comparator_top_02ch
-*+ _up/spice/xschem/single_ls_2tg_sw.sch
+
 .subckt single_ls_2tg_sw VOUT VDD DVDD DVSS DINL VIN
 *.PININFO DVDD:I VDD:I DVSS:I DINL:I VOUT:O VIN:I
 x2 DOHB DOH VDD DVDD DVSS DINL single_lsp
@@ -101,10 +86,6 @@ XM2 VOUT1 DOH DVSS DVSS sky130_fd_pr__nfet_g5v0d10v5 L=8 W=0.5 nf=1 m=1
 x3 DOHB DVSS VOUT VOUT1 VDD single_tgp
 .ends
 
-
-* expanding   symbol:  Project/AR_SAR_ADC/analog_mux_up/spice/xschem/single_lsp.sym # of pins=6
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/analog_mux_up/spice/xschem/single_lsp.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/analog_mux_up/spice/xschem/single_lsp.sch
 .subckt single_lsp DOHB DOH VDD DVDD DVSS DINL
 *.PININFO DVDD:I VDD:I DVSS:I DINL:I DOH:O DOHB:O
 x5 DINL DVDD DVSS DVSS VDD VDD DOH sky130_fd_sc_hvl__lsbuflv2hv_1
@@ -112,9 +93,7 @@ x11 DOH DVSS DVSS VDD VDD DOHB sky130_fd_sc_hvl__inv_2
 .ends
 
 
-* expanding   symbol:  Project/AR_SAR_ADC/analog_mux_up/spice/xschem/single_tgp.sym # of pins=5
-** sym_path: /home/ahmedreda/Project/AR_SAR_ADC/analog_mux_up/spice/xschem/single_tgp.sym
-** sch_path: /home/ahmedreda/Project/AR_SAR_ADC/analog_mux_up/spice/xschem/single_tgp.sch
+
 .subckt single_tgp SEL VSS VOUT VIN VDD
 *.PININFO VIN:I VOUT:O VSS:I VDD:I SEL:I
 XM1 VIN SELN VOUT VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=4 nf=2 m=1
